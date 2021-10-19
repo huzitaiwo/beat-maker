@@ -19,6 +19,10 @@ body {
   justify-content: center;
 }
 
+i.mute {
+  pointer-events: none;
+}
+
 .kick-pad,
 .snare-pad,
 .hihat-pad {
@@ -81,7 +85,10 @@ body {
 }
 
 .controls button {
-  padding: 0.5rem 0.7rem;
+  padding: 0.7rem 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: none;
   border-radius: 3px;
   font-size: 1rem;
@@ -91,12 +98,16 @@ body {
   color: #fff;
 }
 
+.controls button.active {
+  background: rgba(0, 34, 51, 0.5);
+}
+
 .pad {
   transition: all 0.5s ease;
 }
 
 .play {
-  padding: 0.5rem 0.8rem;
+  padding: 0.5rem 1rem;
   font-size: 1.2rem;
   background: #002233;
   border-radius: 5px;
@@ -117,5 +128,26 @@ select {
   }
   100% {
     transform: scale(1.2);
+  }
+}
+
+@media (max-width: 870px) {
+  .kick-track,
+  .snare-track,
+  .hihat-track {
+    flex-direction: column;
+  }
+
+  .controls {
+    flex: 0;
+    width: 300px;
+    justify-content: space-between;
+  }
+
+  .kick-pad,
+  .snare-pad,
+  .hihat-pad {
+    height: 2rem;
+    width: 2rem;
   }
 }
