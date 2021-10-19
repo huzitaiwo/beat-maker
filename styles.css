@@ -6,9 +6,10 @@
   font-family: "El Messiri", sans-serif;
 }
 
-/* i {
-    pointer-events: none;
-} */
+body {
+  background: #4f393c;
+  color: #fff;
+}
 
 .sequencer {
   display: flex;
@@ -33,7 +34,7 @@
 }
 
 .kick-pad.active {
-  background: #ff484f;
+  background: #e74045;
 }
 
 .snare-pad {
@@ -41,7 +42,7 @@
 }
 
 .snare-pad.active {
-  background: #36d0fa;
+  background: #219cbe;
 }
 
 .hihat-pad {
@@ -49,7 +50,7 @@
 }
 
 .hihat-pad.active {
-  background: #55f785;
+  background: #3cc063;
 }
 
 .hihat-track,
@@ -57,9 +58,13 @@
 .kick-track {
   display: flex;
   align-items: center;
-  width: 70%;
+  width: 90%;
   justify-content: space-between;
   margin-top: 5rem;
+}
+
+.kick-select option:hover {
+  background: #fc6e72;
 }
 
 .hihat,
@@ -82,7 +87,7 @@
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.5s ease;
-  background: rgb(88, 88, 88);
+  background: #002233;
   color: #fff;
 }
 
@@ -93,7 +98,7 @@
 .play {
   padding: 0.5rem 0.8rem;
   font-size: 1.2rem;
-  background: rgb(88, 88, 88);
+  background: #002233;
   border-radius: 5px;
   color: white;
   border: none;
