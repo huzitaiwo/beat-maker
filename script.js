@@ -2,11 +2,13 @@ class Drumkit {
     constructor() {
         this.pads = document.querySelectorAll('.pad');
         this.playBtn = document.querySelector('.play');
+        this.playIcon = document.querySelector('.play i');
         this.kickAudio = document.querySelector('.kick-sound');
         this.snareAudio = document.querySelector('.snare-sound');
         this.hihatAudio = document.querySelector('.hihat-sound');
         this.index = 0;
         this.bpm = 150;
+        this.isPlaying = null;
     }
     activePad() {
         this.classList.toggle('active');
@@ -39,7 +41,27 @@ class Drumkit {
     start() {
     // console.log(this);
         const interval = (60/this.bpm) * 1000;
-        setInterval(() => this.repeat() , interval);
+        // check if its playing 
+        if(!this.isPlaying) {
+            this.isPlaying = setInterval(() =>{
+                this.repeat()
+            }, interval);
+        } else {
+            // clearInterval
+            clearInterval(this.isPlaying);
+            this.isPlaying = null;
+        }
+    }
+    updateButton() {
+        if(!this.isPlaying) {
+            this.playIcon.classList.add('fa-pause');
+            this.playIcon.classList.remove('fa-play');
+            this.playBtn.classList.add('active');
+        } else {
+            this.playIcon.classList.add('fa-play');
+            this.playIcon.classList.remove('fa-pause');
+            this.playBtn.classList.remove('active');
+        }
     }
 }
 
@@ -49,9 +71,10 @@ drumkit.pads.forEach(pad => {
     pad.addEventListener('click', drumkit.activePad);
     pad.addEventListener('animationend', function () {
         this.style.animation = '';
-    })
-})
+    });
+});
 
 drumkit.playBtn.addEventListener('click', () => {
+    drumkit.updateButton();
     drumkit.start();
 })
