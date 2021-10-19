@@ -110,3 +110,12 @@ select {
   padding: 0.5rem;
   font-weight: 400;
 }
+
+@keyframes playTrack {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
