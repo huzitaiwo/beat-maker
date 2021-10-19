@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "El Messiri", sans-serif;
+}
+
+/* i {
+    pointer-events: none;
+} */
+
+.sequencer {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.kick-pad,
+.snare-pad,
+.hihat-pad {
+  width: 3rem;
+  height: 3rem;
+  margin: 1rem 0.5rem;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.kick-pad {
+  background: #fc6e72;
+}
+
+.kick-pad.active {
+  background: #ff484f;
+}
+
+.snare-pad {
+  background: #5fcceb;
+}
+
+.snare-pad.active {
+  background: #36d0fa;
+}
+
+.hihat-pad {
+  background: #8aeda8;
+}
+
+.hihat-pad.active {
+  background: #55f785;
+}
+
+.hihat-track,
+.snare-track,
+.kick-track {
+  display: flex;
+  align-items: center;
+  width: 70%;
+  justify-content: space-between;
+  margin-top: 5rem;
+}
+
+.hihat,
+.snare,
+.kick {
+  display: flex;
+}
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  margin: 0 2rem;
+}
+
+.controls button {
+  padding: 0.5rem 0.7rem;
+  border: none;
+  border-radius: 3px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background: rgb(88, 88, 88);
+  color: #fff;
+}
+
+.pad {
+  transition: all 0.5s ease;
+}
+
+.play {
+  padding: 0.5rem 0.8rem;
+  font-size: 1.2rem;
+  background: rgb(88, 88, 88);
+  border-radius: 5px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+
+select {
+  padding: 0.5rem;
+  font-weight: 400;
+}
