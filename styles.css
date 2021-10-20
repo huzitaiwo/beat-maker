@@ -99,7 +99,7 @@ i.mute {
 }
 
 .controls button.active {
-  background: rgba(0, 34, 51, 0.5);
+  background: rgba(0, 34, 51, 0.3);
 }
 
 .pad {
@@ -120,6 +120,27 @@ i.mute {
 select {
   padding: 0.5rem;
   font-weight: 400;
+}
+
+.tempo {
+  max-width: 3rem 0;
+  width: 30%;
+}
+
+.tempo-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 1rem 0;
+  width: 100%;
+  position: relative;
+  background: #002233;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.tempo p {
+  margin: 1rem 0;
+  text-align: center;
 }
 
 @keyframes playTrack {
